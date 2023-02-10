@@ -1,0 +1,7 @@
+2023-02-09 14:26:23.625 -03 [2316] LOG:  database system was interrupted; last known up at 2023-02-08 20:01:32 -03
+2023-02-09 14:26:23.955 -03 [2316] LOG:  database system was not properly shut down; automatic recovery in progress
+2023-02-09 14:26:23.959 -03 [2316] LOG:  redo starts at 0/1E6EC18
+2023-02-09 14:26:23.959 -03 [2316] LOG:  invalid record length at 0/1E6ED00: wanted 24, got 0
+2023-02-09 14:26:23.959 -03 [2316] LOG:  redo done at 0/1E6ECC8 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2023-02-09 14:26:23.963 -03 [9984] LOG:  checkpoint starting: end-of-recovery immediate wait
+2023-02-09 14:26:23.969 -03 [9984] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.007 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB

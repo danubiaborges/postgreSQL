@@ -1,0 +1,62 @@
+2023-02-08 19:27:36.036 -03 [10780] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-08 19:27:36.036 -03 [9876] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-08 19:31:31.813 -03 [7792] LOG:  checkpoint starting: time
+2023-02-08 19:33:12.752 -03 [7792] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 1 WAL file(s) added, 0 removed, 0 recycled; write=100.825 s, sync=0.067 s, total=100.940 s; sync files=251, longest=0.008 s, average=0.001 s; distance=4227 kB, estimate=4227 kB
+2023-02-08 19:36:31.770 -03 [7792] LOG:  checkpoint starting: time
+2023-02-08 19:36:37.045 -03 [7792] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.247 s, sync=0.018 s, total=5.276 s; sync files=37, longest=0.009 s, average=0.001 s; distance=161 kB, estimate=3820 kB
+2023-02-08 19:38:54.011 -03 [14836] ERROR:  syntax error at or near ")" at character 214
+2023-02-08 19:38:54.011 -03 [14836] STATEMENT:  CREATE TABLE cliente (
+	
+		numero BIGSERIAL PRIMARY KEY,
+		nome VARCHAR(120) NOT NULL,
+		email VARCHAR(250) NOT NULL,
+		ativo BOOLEAN NOT NULL DEFAULT TRUE,
+		data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	
+	);
+2023-02-08 19:41:31.056 -03 [7792] LOG:  checkpoint starting: time
+2023-02-08 19:41:34.813 -03 [7792] LOG:  checkpoint complete: wrote 35 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.736 s, sync=0.009 s, total=3.757 s; sync files=31, longest=0.001 s, average=0.001 s; distance=131 kB, estimate=3451 kB
+2023-02-08 19:46:31.815 -03 [7792] LOG:  checkpoint starting: time
+2023-02-08 19:46:37.073 -03 [7792] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.245 s, sync=0.009 s, total=5.258 s; sync files=35, longest=0.001 s, average=0.001 s; distance=189 kB, estimate=3125 kB
+2023-02-08 19:51:14.184 -03 [14836] ERROR:  syntax error at or near "data_criacao" at character 314
+2023-02-08 19:51:14.184 -03 [14836] STATEMENT:  CREATE TABLE cliente_transacoes (
+	
+		id BIGSERIAL PRIMARY KEY,
+		banco_numero INTEGER NOT NULL,
+		agencia_numero INTEGER NOT NULL,
+		conta_corrente_numero BIGINT NOT NULL,
+		conta_corrente_digito SMALLINT NOT NULL,
+		cliente_numero BIGINT NOT NULL,
+		tipo_transacao_id SMALLINT NOT NULL,
+		valor NUMERIC(15, 2) NOT NULL
+		data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+		FOREIGN KEY (banco_numero, agencia_numero, conta_corrente_numero, conta_corrente_digito, cliente_numero) REFERENCES conta_corrente (banco_numero, agencia_numero, numero, digito, cliente_numero)
+		
+	);
+2023-02-08 19:51:24.882 -03 [14836] ERROR:  syntax error at or near "data_criacao" at character 314
+2023-02-08 19:51:24.882 -03 [14836] STATEMENT:  CREATE TABLE cliente_transacoes (
+	
+		id BIGSERIAL PRIMARY KEY,
+		banco_numero INTEGER NOT NULL,
+		agencia_numero INTEGER NOT NULL,
+		conta_corrente_numero BIGINT NOT NULL,
+		conta_corrente_digito SMALLINT NOT NULL,
+		cliente_numero BIGINT NOT NULL,
+		tipo_transacao_id SMALLINT NOT NULL,
+		valor NUMERIC(15, 2) NOT NULL
+		data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		FOREIGN KEY (banco_numero, agencia_numero, conta_corrente_numero, conta_corrente_digito, cliente_numero) REFERENCES conta_corrente (banco_numero, agencia_numero, numero, digito, cliente_numero)
+		
+	);
+2023-02-08 19:56:31.091 -03 [7792] LOG:  checkpoint starting: time
+2023-02-08 19:56:35.707 -03 [7792] LOG:  checkpoint complete: wrote 43 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.603 s, sync=0.010 s, total=4.617 s; sync files=36, longest=0.001 s, average=0.001 s; distance=145 kB, estimate=2827 kB
+2023-02-08 19:58:48.282 -03 [9924] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-08 19:58:48.282 -03 [14836] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-08 19:58:48.282 -03 [12336] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-08 19:58:48.284 -03 [6052] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-08 19:58:48.284 -03 [1916] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-08 19:58:48.295 -03 [7216] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-08 19:59:22.265 -03 [14988] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-08 19:59:22.265 -03 [2332] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-08 20:01:31.717 -03 [7792] LOG:  checkpoint starting: time
+2023-02-08 20:01:32.290 -03 [7792] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.558 s, sync=0.002 s, total=0.574 s; sync files=3, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=2545 kB
