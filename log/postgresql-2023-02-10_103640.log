@@ -57,3 +57,41 @@
 	)
 	SELECT numero, nome
 	FROM tbl_tmp_banco;
+2023-02-10 17:58:42.519 -03 [4896] ERROR:  missing FROM-clause entry for table "banco" at character 348
+2023-02-10 17:58:42.519 -03 [4896] STATEMENT:  WITH clientes_e_transacoes AS (
+		SELECT	cliente.nome AS cliente_nome,
+				tipo_transacao.nome AS tipo_transacao_nome,
+				cliente_transacoes.valor AS tipo_transacao_valor
+		FROM cliente_transacoes
+		JOIN cliente ON cliente.numero = cliente_transacoes.cliente_numero
+		JOIN tipo_transacao ON tipo_transacao.id = cliente_transacoes.tipo_transacao_id AND banco.nome ILIKE 'Itau'
+	)
+	SELECT cliente_nome, tipo_transacao_nome, tipo_transacao_valor
+	FROM clientes_e_transacoes;
+2023-02-10 18:00:02.444 -03 [4896] ERROR:  missing FROM-clause entry for table "tipo_transacao" at character 74
+2023-02-10 18:00:02.444 -03 [4896] STATEMENT:  WITH clientes_e_transacoes AS (
+		SELECT	cliente.nome AS cliente_nome,
+				tipo_transacao.nome AS tipo_transacao_nome,
+				cliente_transacoes.valor AS tipo_transacao_valor
+		FROM cliente_transacoes
+		JOIN cliente ON cliente.numero = cliente_transacoes.cliente_numero
+	)
+	SELECT cliente_nome, tipo_transacao_nome, tipo_transacao_valor
+	FROM clientes_e_transacoes;
+2023-02-10 18:00:37.992 -03 [4896] ERROR:  missing FROM-clause entry for table "tipo_transacao" at character 74
+2023-02-10 18:00:37.992 -03 [4896] STATEMENT:  WITH clientes_e_transacoes AS (
+		SELECT	cliente.nome AS cliente_nome,
+				tipo_transacao.nome AS tipo_transacao_nome,
+				cliente_transacoes.valor AS tipo_transacao_valor
+		FROM cliente_transacoes
+		JOIN cliente ON cliente.numero = cliente_transacoes.cliente_numero
+	)
+	SELECT cliente_nome, tipo_transacao_nome, tipo_transacao_valor
+	FROM clientes_e_transacoes;
+2023-02-10 18:12:21.764 -03 [10632] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-10 18:12:21.764 -03 [2928] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-10 18:12:21.764 -03 [10692] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-10 18:12:21.764 -03 [7828] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-10 18:12:21.764 -03 [11596] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-10 18:12:21.764 -03 [7324] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-02-10 18:12:21.764 -03 [4896] LOG:  could not receive data from client: unrecognized winsock error 10054
